@@ -1,6 +1,7 @@
 require('dotenv').config();
 
-const express = require('express');
+// Add Express
+const express = require("express");
 const mongoose = require('mongoose');
 const mongoString = process.env.DATABASE_URL;
 
@@ -8,21 +9,28 @@ mongoose.connect(mongoString);
 const database = mongoose.connection;
 
 database.on('error', (error) => {
-    console.log(error)
+  console.log(error)
 })
 
 database.once('connected', () => {
-    console.log('Database Connected');
+  console.log('Database Connected');
 })
+
+// Initialize Express
 const app = express();
 
-app.use(express.json());
+// Create GET request
+app.get("/", (req, res) => {
+  res.send("Express on Vercel");
+});
 
-app.listen(3000, () => {
-    console.log(`Server Started at ${3000}`)
-})
+// Initialize server
+app.listen(5000, () => {
+  console.log("Running on port 5000.");
+});
+
+// Export the Express API
+module.exports = app;
 
 const routes = require('./routes/routes');
-
 app.use('/api', routes)
-
