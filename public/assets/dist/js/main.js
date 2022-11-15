@@ -22,10 +22,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     form.onsubmit = async (e) => {
         e.preventDefault();
+
+        let dados = new FormData(form)
+
+        for (var pair of dados.entries()) {
+            console.log(pair[0]+ ', ' + pair[1]); 
+        }
     
         let response = await fetch('./api/posts/', {
           method: 'POST',
-          body: JSON.stringify(new FormData(form))
+          body: JSON.stringify(dados)
         });
     
         let result = await response.json();
