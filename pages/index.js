@@ -37,7 +37,6 @@ export async function getServerSideProps(ctx) {
 
     // request posts from api
 
-    console.log(await fetch(`${dev ? DEV_URL : PROD_URL}/api/posts`))
     let response = await fetch(`${dev ? DEV_URL : PROD_URL}/api/posts`);
     // extract the data
     let data = await response.json();
