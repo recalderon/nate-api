@@ -1,0 +1,5 @@
+{
+    "rewrites": [
+        {"source": "/", "destination": "https://nate-api.vercel.app/public/index.html"}
+    ]
+}
