@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     form.onsubmit = async (e) => {
         e.preventDefault();
     
-        let response = await fetch('./api/posts/add', {
+        let response = await fetch('./api/posts/', {
           method: 'POST',
           body: JSON.stringify(new FormData(form))
         });
