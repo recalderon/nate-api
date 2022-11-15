@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     
         let response = await fetch('./api/posts', {
           method: 'POST',
-          body: JSON.stringify(dados)
+          body: dados
         });
     
         let result = await response.json();
