@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     
         let result = await response.json();
         
-        if (result[sucess] = true){
+        if (result.success == true){
             form.classList.add('d-none')
         }
     };
