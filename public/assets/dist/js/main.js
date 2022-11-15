@@ -23,9 +23,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     form.onsubmit = async (e) => {
         e.preventDefault();
     
-        let response = await fetch('https://nate-api.vercel.app/api/posts/', {
+        let response = await fetch('./api/posts/', {
           method: 'POST',
-          mode: 'no-cors',
           body: new FormData(form)
         });
     
