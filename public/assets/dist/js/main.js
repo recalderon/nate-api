@@ -28,10 +28,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
         for (var pair of dados.entries()) {
             console.log(pair[0]+ ', ' + pair[1]); 
         }
+
+        console.log(JSON.stringify(dados))
     
         let response = await fetch('./api/posts', {
           method: 'POST',
-          body: dados
+          body: JSON.stringify(dados)
         });
     
         let result = await response.json();
