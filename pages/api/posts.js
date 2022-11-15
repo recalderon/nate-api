@@ -60,10 +60,7 @@ async function addPost(req, res) {
         });
     } catch (error) {
         // return an error
-        return res.json({
-            message: new Error(error).message,
-            success: false,
-        });
+        return res.json;
     }
 }
 
