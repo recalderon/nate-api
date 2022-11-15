@@ -29,11 +29,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
             console.log(pair[0]+ ', ' + pair[1]); 
         }
 
-        console.log(JSON.stringify(dados))
+        console.log(JSON.stringify(FormData))
     
         let response = await fetch('./api/posts', {
           method: 'POST',
-          body: JSON.stringify(dados)
+          body: JSON.stringify(FormData)
         });
     
         let result = await response.json();
