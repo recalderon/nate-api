@@ -3,26 +3,26 @@
 	font-family: "Lemon";
 	font-style: normal;
 	font-weight: 400;
-	src: url('https://nate-api.vercel.app/public/assets/dist/fonts/lemon-v14-latin-regular.eot'); /* IE9 Compat Modes */
+	src: url('https://nate-api.vercel.app/assets/dist/fonts/lemon-v14-latin-regular.eot'); /* IE9 Compat Modes */
 	src: local(''),
-		url('https://nate-api.vercel.app/public/assets/dist/fonts/lemon-v14-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-		url('https://nate-api.vercel.app/public/assets/dist/fonts/lemon-v14-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-		url('https://nate-api.vercel.app/public/assets/dist/fonts/lemon-v14-latin-regular.woff') format('woff'), /* Modern Browsers */
-		url('https://nate-api.vercel.app/public/assets/dist/fonts/lemon-v14-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-		url('https://nate-api.vercel.app/public/assets/dist/fonts/lemon-v14-latin-regular.svg#Lemon') format('svg'); /* Legacy iOS */
+		url('https://nate-api.vercel.app/assets/dist/fonts/lemon-v14-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		url('https://nate-api.vercel.app/assets/dist/fonts/lemon-v14-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+		url('https://nate-api.vercel.app/assets/dist/fonts/lemon-v14-latin-regular.woff') format('woff'), /* Modern Browsers */
+		url('https://nate-api.vercel.app/assets/dist/fonts/lemon-v14-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('https://nate-api.vercel.app/assets/dist/fonts/lemon-v14-latin-regular.svg#Lemon') format('svg'); /* Legacy iOS */
 }
 /* neucha-regular - latin */
 @font-face {
 	font-family: 'Neucha';
 	font-style: normal;
 	font-weight: 400;
-	src: url('https://nate-api.vercel.app/public/assets/dist/fonts/neucha-v17-latin-regular.eot'); /* IE9 Compat Modes */
+	src: url('https://nate-api.vercel.app/assets/dist/fonts/neucha-v17-latin-regular.eot'); /* IE9 Compat Modes */
 	src: local(''),
-		 url('https://nate-api.vercel.app/public/assets/dist/fonts/neucha-v17-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-		 url('https://nate-api.vercel.app/public/assets/dist/fonts/neucha-v17-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-		 url('https://nate-api.vercel.app/public/assets/dist/fonts/neucha-v17-latin-regular.woff') format('woff'), /* Modern Browsers */
-		 url('https://nate-api.vercel.app/public/assets/dist/fonts/neucha-v17-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-		 url('https://nate-api.vercel.app/public/assets/dist/fonts/neucha-v17-latin-regular.svg#Neucha') format('svg'); /* Legacy iOS */
+		 url('https://nate-api.vercel.app/assets/dist/fonts/neucha-v17-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		 url('https://nate-api.vercel.app/assets/dist/fonts/neucha-v17-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+		 url('https://nate-api.vercel.app/assets/dist/fonts/neucha-v17-latin-regular.woff') format('woff'), /* Modern Browsers */
+		 url('https://nate-api.vercel.app/assets/dist/fonts/neucha-v17-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+		 url('https://nate-api.vercel.app/assets/dist/fonts/neucha-v17-latin-regular.svg#Neucha') format('svg'); /* Legacy iOS */
 }
 *{
 	body{
@@ -35,7 +35,7 @@
 		// linear-gradient(135deg, transparent 75%, #000 75%);
 		// background-size:25px 25px; /* Must be a square */
 		// background-position:0 0, 12.5px 0, 12.5px -12.5px, 0px 12.5px; /* Must be half of one side of the square */
-		background-image: url('https://nate-api.vercel.app/public/assets/dist/img/back-morcegos.png');
+		background-image: url('https://nate-api.vercel.app/assets/dist/img/back-morcegos.png');
 		background-repeat: no-repeat;
 		background-size: cover;
 		@media (max-width: 1200px) {
@@ -100,7 +100,7 @@ form{
 }
 
 #conteudo{
-	background-image: url('https://nate-api.vercel.app/public/assets/dist/img/teste.png');
+	background-image: url('https://nate-api.vercel.app/assets/dist/img/teste.png');
 	background-color: #cc8fb8;
 	background-size: cover;
     background-repeat: no-repeat;
