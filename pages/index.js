@@ -1,5 +1,6 @@
 import Head from 'next/head';
 
+import 'bootstrap/dist/css/bootstrap.css'
 import Nav from '../components/Nav';
 import PostCard from '../components/PostCard';
 import styles from '../styles/Home.module.css';
@@ -18,11 +19,24 @@ export default function Home({ posts }) {
                     {posts.length === 0 ? (
                         <h2>No added posts</h2>
                     ) : (
-                        <ul>
+                        <div className='table-responsive'>
+                            <table className="table">
+                            <thead>
+                                <tr>
+                                <th scope="col">@</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">RSVP</th>
+                                <th scope="col">Goodies</th>
+                                <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
                             {posts.map((post, i) => (
                                 <PostCard post={post} key={i} />
                             ))}
-                        </ul>
+                                </tbody>
+                            </table>
+                        </div>
                     )}
                 </div>
             </main>

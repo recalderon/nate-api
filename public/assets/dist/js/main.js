@@ -46,8 +46,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
         e.preventDefault();
         let form = document.querySelector('form');
         let dados = new FormData(form);
-        let arroba = new URLSearchParams('convidado');
-        dados.append('user', arroba);
+        let param = new URLSearchParams(document.location.search);
+        let arroba = param.get('convidado')
+        dados.append('convidado', arroba);
 
         let response = await fetch('./api/posts', {
           method: 'POST',
