@@ -21,7 +21,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
             'volume',
         ]
     });
+    const player2 = new Plyr('video', {
+        resetOnEnd: true,
+    });
     player.play();
+    player2.play();
     
     let form = document.querySelector('form');
     let rsvp = form.querySelector('input[name="rsvp"]');
