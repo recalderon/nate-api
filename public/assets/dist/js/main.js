@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let form = document.querySelector('form');
     let rsvp = form.querySelector('input[name="rsvp"]');
     let continuar = form.querySelector('button.continuar');
+    let submit = form.querySelector('button[type="submit"]');
 
     rsvp.addEventListener('change', (event) =>{
         if (rsvp.value == 'sim'){
