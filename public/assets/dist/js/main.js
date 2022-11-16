@@ -1,14 +1,4 @@
 document.addEventListener('DOMContentLoaded', (event) => {
-    var myModal = new bootstrap.Modal(document.getElementById("myModal"), {});
-        document.onreadystatechange = function () {
-        myModal.show();
-        let aceitamusica = document.querySelector('button#play');
-        let musicadeemo = document.querySelector('audio');
-        aceitamusica.addEventListener('click', (event) =>{
-            musicadeemo.play();
-            myModal.hide();
-        })
-    };
     const player = new Plyr('audio', {
         resetOnEnd: true,
         controls: [
@@ -24,8 +14,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const player2 = new Plyr('video', {
         resetOnEnd: true,
     });
-    player.play();
-    player2.play();
+    var myModal = new bootstrap.Modal(document.getElementById("myModal"), {});
+        document.onreadystatechange = function () {
+        myModal.show();
+        let aceitamusica = document.querySelector('button#play');
+        aceitamusica.addEventListener('click', (event) =>{
+            player.play();
+            player2.play();
+        })
+    };
     
     let form = document.querySelector('form');
     let rsvp = form.querySelector('input[name="rsvp"]');
