@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         aceitamusica.addEventListener('click', (event) =>{
             player.play();
             player2.play();
+            myModal.hide();
         })
     };
     
