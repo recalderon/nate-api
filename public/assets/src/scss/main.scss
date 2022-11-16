@@ -114,10 +114,11 @@ form{
 		height: 200px;
 		width: auto;
 		&#coracoes{
-			left: -100px;
-			height: 450px;
+			left: -55px;
+			height: 250px;
 			@media (max-width: 1200px) {
-				height: 300px;
+				height: 200px;
+				left: 0px;
 			}
 			@media (max-width: 781px) {
 				height: 100px;
