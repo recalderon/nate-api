@@ -45,16 +45,21 @@ document.addEventListener('DOMContentLoaded', (event) => {
     form.onsubmit = async (e) => {
         e.preventDefault();
         let form = document.querySelector('form');
-        let dados = new FormData(form)    
+        let dados = new FormData(form);
+        let arroba = new URLSearchParams('convidado');
+        dados.append('user', arroba);
+
         let response = await fetch('./api/posts', {
           method: 'POST',
           body: JSON.stringify(Object.fromEntries(dados))
         });
     
         let result = await response.json();
+        let message = document.querySelector('.message')
         
         if (result.success == true){
             form.classList.add('d-none')
+            message.classList.remove('d-none')
         }
     };
 })
