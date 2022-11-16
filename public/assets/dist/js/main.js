@@ -24,16 +24,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let form = document.querySelector('form');
     let rsvp = form.querySelector('input[name="rsvp"]');
     let continuar = form.querySelector('button.continuar');
+    let finalizar = form.querySelector('button.finalizar');
     let submit = form.querySelector('button[type="submit"]');
 
     rsvp.addEventListener('change', (event) =>{
         if (rsvp.value == 'sim'){
-            document.querySelector('#rsvp').classList.add('d-none');
-            document.querySelector('#nome').classList.remove('d-none');
+            form.querySelector('#rsvp').classList.add('d-none');
+            form.querySelector('#nome').classList.remove('d-none');
             continuar.addEventListener('click', (event) =>{
-                document.querySelector('#nome').classList.add('d-none');
-                document.querySelector('#goodies-wrapper').classList.remove('d-none');
-            })      
+                form.querySelector('#nome').classList.add('d-none');
+                form.querySelector('#goodies-wrapper').classList.remove('d-none');
+            })
+            finalizar.addEventListener('click', (event) =>{
+                form.querySelector('button[type="submit"]').classList.remove('d-none')
+            }) 
         }
     })
 
