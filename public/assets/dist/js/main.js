@@ -1,14 +1,9 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     const player = new Plyr('audio', {
         resetOnEnd: true,
-        controls: [
-            'restart',
+        controls: [ 
             'play',
             'progress',
-            'current-time',
-            'duration',
-            'mute',
-            'volume',
         ]
     });
     const player2 = new Plyr('video', {
