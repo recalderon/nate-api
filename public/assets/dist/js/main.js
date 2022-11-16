@@ -8,8 +8,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
             musicadeemo.play();
             myModal.hide();
         })
-
     };
+    document.addEventListener('event', (event) => {
+        const player = new Plyr('audio', {
+            resetOnEnd: true,
+            controls: [
+                'restart',
+                'play',
+                'progress',
+                'current-time',
+                'duration',
+                'mute',
+                'volume',
+            ]
+        });
+        player.play();
+    })
     let form = document.querySelector('form');
     let rsvp = form.querySelector('input[name="rsvp"]');
 
