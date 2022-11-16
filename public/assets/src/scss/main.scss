@@ -49,24 +49,26 @@ header{
 }
 
 form{
-	background-color: #B20100;	
-	.message{
-		margin: 20% 45% 0;
-		display:inline-block;
-		
-		font-size: 4em;
-		
-		border-bottom: 10px solid #9ae2ff;
-		animation-name: blinking;
-		animation-duration: 1s;
-		animation-iteration-count: 100;
-	}
-	@keyframes blinking {
-		50% {
-			border-color: #ffcd5f;
-		}
-	}
+	background-color: #b20100;
+	
 }
+
+.blinking {
+	margin: 20% 45% 0;
+	display:inline-block;
+	
+	font-size: 4em;
+	
+	border-bottom: 10px solid #9ae2ff;
+	animation-name: blinking;
+	animation-duration: 1s;
+	animation-iteration-count: 100;
+  }
+  @keyframes blinking {
+	50% {
+	  border-color: #ffcd5f;
+	}
+  }
 
 .cover-container {
 	max-width: 60%;
