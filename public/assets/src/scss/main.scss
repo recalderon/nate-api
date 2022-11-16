@@ -50,9 +50,9 @@ header{
 
 form{
 	color: black;
-	input[type="submit"]{
-		border: 2px dashed #000000;
-	}
+	border-radius: 5px;
+	background-color: #eeeeee;
+	border: 6px dashed #000000;
 }
 
 .cover-container {
