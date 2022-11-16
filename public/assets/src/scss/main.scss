@@ -49,9 +49,22 @@ header{
 }
 
 form{
-	color: black;
-	border-radius: 5px;
-	border: 6px dashed #ffffff;
+	.message{
+		margin: 20% 45% 0;
+		display:inline-block;
+		
+		font-size: 4em;
+		
+		border-bottom: 10px solid #9ae2ff;
+		animation-name: blinking;
+		animation-duration: 1s;
+		animation-iteration-count: 100;
+	}
+	@keyframes blinking {
+		50% {
+			border-color: #ffcd5f;
+		}
+	}
 }
 
 .cover-container {
