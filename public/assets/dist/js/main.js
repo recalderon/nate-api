@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     
     let form = document.querySelector('form');
     let rsvp = form.querySelector('input[name="rsvp"]');
-    let continuar = form.querySelector('btn.continuar');
+    let continuar = form.querySelector('button.continuar');
 
     rsvp.addEventListener('change', (event) =>{
         if (rsvp.value == 'sim'){
