@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
     const player2 = new Plyr('video', {
         resetOnEnd: true,
+        controls: []
     });
     var myModal = new bootstrap.Modal(document.getElementById("myModal"), {});
         document.onreadystatechange = function () {
