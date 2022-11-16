@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             document.querySelector('#nome').classList.remove('d-none');
             continuar.addEventListener('click', (event) =>{
                 document.querySelector('#nome').classList.add('d-none');
-                document.querySelector('#goodies').classList.remove('d-none');
+                document.querySelector('#goodies-wrapper').classList.remove('d-none');
             })      
         }
     })
