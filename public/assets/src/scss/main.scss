@@ -41,7 +41,7 @@
 * {
 	body {
 		font-family: "Lemon";
-		// background-color: #202020;
+		background-color: #000000;
 		// background-image:
 		// linear-gradient(45deg, #000 25%, transparent 25%),
 		// linear-gradient(135deg, #000 25%, transparent 25%),
@@ -52,8 +52,11 @@
 		background-image: url('/assets/dist/img/back-morcegos.png');
 		background-repeat: no-repeat;
 		background-size: cover;
+		background-position: center bottom;
 
-		@media (max-width: 1200px) {}
+		@media (max-width: 781px) {
+
+		}
 
 	}
 }
@@ -113,11 +116,6 @@ form {
 	.plyr--audio {
 		width: 100%;
 		height: auto;
-	}
-
-	@media (max-width: 781px) {
-		height: 400px;
-		width: 250px;
 	}
 }
 
