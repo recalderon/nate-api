@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 form.querySelector('#goodies-wrapper').classList.remove('d-none');
             })
             finalizar.addEventListener('click', (event) =>{
-                form.querySelector('button[type="submit"]').classList.remove('d-none')
+                form.querySelector('#last-wrapper').classList.remove('d-none');
             }) 
         }
     })
