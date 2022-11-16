@@ -96,18 +96,16 @@ form{
 }
 
 #conteudo{
-	//background-color: #cc8fb8;
+	//background-color: #cc8fb8;		
+	background-image: url('/assets/dist/img/bg.svg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position-x: center;
+	background-position-y: center;
 	min-height: 600px;
 	filter: drop-shadow(15px 9px 12px #000);
 	@media (max-width: 781px) {
 		margin-top: 50px;
-	}
-	.convite{		
-		background-image: url('/assets/dist/img/bg.svg');
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position-x: right;
-		background-position-y: bottom;
 	}
 	img{
 		position: absolute;
