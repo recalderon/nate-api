@@ -23,11 +23,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
     
     let form = document.querySelector('form');
     let rsvp = form.querySelector('input[name="rsvp"]');
+    let continuar = form.querySelector('btn.continuar');
 
     rsvp.addEventListener('change', (event) =>{
         if (rsvp.value == 'sim'){
             document.querySelector('#rsvp').classList.add('d-none');
-            document.querySelector('#info').classList.remove('d-none');            
+            document.querySelector('#nome').classList.remove('d-none');
+            continuar.addEventListener('click', (event) =>{
+                document.querySelector('#nome').classList.add('d-none');
+                document.querySelector('#goodies').classList.remove('d-none');
+            })      
         }
     })
 
