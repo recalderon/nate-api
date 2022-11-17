@@ -1,20 +1,22 @@
+
+var myModal = new bootstrap.Modal(document.getElementById("myModal"), {});
+document.onreadystatechange = function () {
+    myModal.show();
+    let aceitamusica = document.querySelector('button#play');
+    aceitamusica.addEventListener('click', (event) => {
+        const player = new Plyr('audio', {
+            resetOnEnd: true,
+            controls: [
+                'play',
+                'progress',
+            ]
+        });
+        player.play();
+        myModal.hide();
+    })
+};
+
 document.addEventListener('DOMContentLoaded', (event) => {
-    const player = new Plyr('audio', {
-        resetOnEnd: true,
-        controls: [
-            'play',
-            'progress',
-        ]
-    });
-    var myModal = new bootstrap.Modal(document.getElementById("myModal"), {});
-    document.onreadystatechange = function () {
-        myModal.show();
-        let aceitamusica = document.querySelector('button#play');
-        aceitamusica.addEventListener('click', (event) => {
-            player.play();
-            myModal.hide();
-        })
-    };
 
     let form = document.querySelector('form');
     let rsvps = form.querySelectorAll('input[name="rsvp"]');
@@ -98,7 +100,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         list.appendChild(itembase2)
         for (let i of data) {
             var itemqtdgoodies = document.createElement("input");
-            console.debug(i)
             itemqtdgoodies.classList.add('chihuahua')
             itemqtdgoodies.value = i.qtd;
             list.appendChild(itemqtdgoodies);

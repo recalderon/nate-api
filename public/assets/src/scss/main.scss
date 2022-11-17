@@ -39,12 +39,14 @@
 }
 
 * {
+	.modal-backdrop{
+		opacity: 1 !important;
+	}
 	body {
 		font-family: "Neucha";
 		background-color: #000000;
 		background-image: url('/assets/dist/img/bats.svg');
 		background-size: cover;
-		background-position: center bottom;
 
 		@media (max-width: 781px) {}
 
@@ -106,7 +108,6 @@ form {
 	transform: rotate(-10deg);
 	z-index: 10;
 }
-
 
 
 $color_1: #b20100;
