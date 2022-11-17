@@ -1,20 +1,27 @@
 import Head from 'next/head';
+import Image from 'next/image'
 
+import Script from 'next/script'
 import 'bootstrap/dist/css/bootstrap.css'
-import Nav from '../components/Nav';
 import PostCard from '../components/PostCard';
 import styles from '../styles/Home.module.css';
+
+
 
 export default function Home({ goodies }) {
     return (
         <div>
-            <Head>
+            <Head >
                 <title>Home</title>
             </Head>
-
-            <Nav />
+            <div className="staticshield-div"></div>
 
             <main>
+
+                <div className="bg-black text-center py-1 d-flex flex-row align-items-center gap-4 justify-content-center">
+                    <Image src="/assets/dist/img/logo.svg" alt="me" width="300" height="150" />
+                    <h4 className='text-uppercase text-white'>Lista de convidados confirmados e o que vão trazer</h4>
+                </div>
                 <div className={styles.container}>
                     {goodies.length === 0 ? (
                         <h2>No added posts</h2>

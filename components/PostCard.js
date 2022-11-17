@@ -27,8 +27,8 @@ export default function PostCard({ goodie }) {
             return setDeleting(false);
         }
     };
-    return (
-        <>
+    if(goodie.rsvp === 'sim'){
+        return <>
             <tr>
                 <td>{goodie.convidado}</td>
                 <td>{goodie.nomecompleto}</td>
@@ -40,5 +40,5 @@ export default function PostCard({ goodie }) {
                 </button></td>
             </tr>
         </>
-    );
+    }
 }
