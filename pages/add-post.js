@@ -27,9 +27,9 @@ export default function AddPost() {
             createdAt: new Date().toISOString(),
         };
         // save the post
-        let response = await fetch('/api/posts', {
+        let response = await fetch('/api/goodies', {
             method: 'POST',
-            body: JSON.stringify(post),
+            body: JSON.stringify(goodie),
         });
 
         // get the data

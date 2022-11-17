@@ -1,3 +1,4 @@
+require("dotenv").config();
 const { connectToDatabase } = require('../../lib/mongodb');
 const ObjectId = require('mongodb').ObjectId;
 
@@ -28,14 +29,14 @@ async function getPosts(req,res){
         // connect to the database
         let { db } = await connectToDatabase();
         // fetch the posts
-        let posts = await db
-            .collection('posts')
+        let goodies = await db
+            .collection('goodies')
             .find({})
             .sort({ published: -1 })
             .toArray();
         // return the posts
         return res.json({
-            message: JSON.parse(JSON.stringify(posts)),
+            message: JSON.parse(JSON.stringify(goodies)),
             success: true,
         });
     } catch (error) {
@@ -52,7 +53,7 @@ async function addPost(req, res) {
         // connect to the database
         let { db } = await connectToDatabase();
         // add the post
-        await db.collection('posts').insertOne(JSON.parse(req.body));
+        await db.collection('goodies').insertOne(JSON.parse(req.body));
         // return a message
         return res.json({
             message: 'Post added successfully',
@@ -70,7 +71,7 @@ async function updatePost(req, res) {
         let { db } = await connectToDatabase();
 
         // update the published status of the post
-        await db.collection('posts').updateOne(
+        await db.collection('goodies').updateOne(
             {
                 _id: new ObjectId(req.body),
             },
@@ -98,7 +99,7 @@ async function deletePost(req, res) {
         let { db } = await connectToDatabase();
 
         // Deleting the post
-        await db.collection('posts').deleteOne({
+        await db.collection('goodies').deleteOne({
             _id: new ObjectId(req.body),
         });
 

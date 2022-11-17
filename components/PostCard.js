@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 
-export default function PostCard({ post }) {
-    const [publishing, setPublishing] = useState(false);
+export default function PostCard({ goodie }) {
     const [deleting, setDeleting] = useState(false);
     const router = useRouter();
     
@@ -13,7 +12,7 @@ export default function PostCard({ post }) {
 
         try {
             // Delete post
-            await fetch('/api/posts', {
+            await fetch('/api/goodies', {
                 method: 'DELETE',
                 body: postId,
             });
@@ -31,13 +30,14 @@ export default function PostCard({ post }) {
     return (
         <>
             <tr>
-            <th scope="row">{post.convidado}</th>
-            <td>{post.nomecompleto}</td>
-            <td>{post.rsvp}</td>
-            <td>{post.goodies}</td>
-            <td><button type="button" onClick={() => deletePost(post['_id'])}>
-                {deleting ? 'Deleting' : 'Delete'}
-            </button></td>
+                <td>{goodie.convidado}</td>
+                <td>{goodie.nomecompleto}</td>
+                <td>{goodie.rsvp}</td>
+                <td>{goodie.qtd}</td>
+                <td>{goodie.goodies}</td>
+                <td><button type="button" onClick={() => deletePost(goodie['_id'])}>
+                    {deleting ? 'Apagando' : 'Apagar'}
+                </button></td>
             </tr>
         </>
     );

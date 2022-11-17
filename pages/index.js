@@ -5,7 +5,7 @@ import Nav from '../components/Nav';
 import PostCard from '../components/PostCard';
 import styles from '../styles/Home.module.css';
 
-export default function Home({ posts }) {
+export default function Home({ goodies }) {
     return (
         <div>
             <Head>
@@ -16,7 +16,7 @@ export default function Home({ posts }) {
 
             <main>
                 <div className={styles.container}>
-                    {posts.length === 0 ? (
+                    {goodies.length === 0 ? (
                         <h2>No added posts</h2>
                     ) : (
                         <div className='table-responsive'>
@@ -26,13 +26,14 @@ export default function Home({ posts }) {
                                 <th scope="col">@</th>
                                 <th scope="col">Nome</th>
                                 <th scope="col">RSVP</th>
+                                <th scope="col">Qtd</th>
                                 <th scope="col">Goodies</th>
                                 <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                            {posts.map((post, i) => (
-                                <PostCard post={post} key={i} />
+                            {goodies.map((goodie, i) => (
+                                <PostCard goodie={goodie} key={i} />
                             ))}
                                 </tbody>
                             </table>
@@ -51,13 +52,13 @@ export async function getServerSideProps(ctx) {
 
     // request posts from api
 
-    let response = await fetch(`${dev ? DEV_URL : PROD_URL}/api/posts`);
+    let response = await fetch(`${dev ? DEV_URL : PROD_URL}/api/goodies`);
     // extract the data
     let data = await response.json();
 
     return {
         props: {
-            posts: data['message'],
+            goodies: data['message'],
         },
     };
 }

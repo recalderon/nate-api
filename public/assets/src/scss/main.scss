@@ -42,40 +42,34 @@
 	body {
 		font-family: "Lemon";
 		background-color: #000000;
-		// background-image:
-		// linear-gradient(45deg, #000 25%, transparent 25%),
-		// linear-gradient(135deg, #000 25%, transparent 25%),
-		// linear-gradient(45deg, transparent 75%, #000 75%),
-		// linear-gradient(135deg, transparent 75%, #000 75%);
-		// background-size:25px 25px; /* Must be a square */
-		// background-position:0 0, 12.5px 0, 12.5px -12.5px, 0px 12.5px; /* Must be half of one side of the square */
-		background-image: url('/assets/dist/img/back-morcegos.png');
-		background-repeat: no-repeat;
+		background-image: url('/assets/dist/img/bats.svg');
 		background-size: cover;
 		background-position: center bottom;
 
-		@media (max-width: 781px) {
-
-		}
+		@media (max-width: 781px) {}
 
 	}
 }
 
-header {
-	height: 80px;
-}
-
 form {
+	font-family: 'Neucha';
 	background-color: #b20100;
-	fieldset{
-		label{
+
+	fieldset {
+		h4 {
+			color: #ffffff
+		}
+
+		label {
 			color: #b20100;
 		}
-		input{
+
+		input {
 			color: #000000;
 		}
-		&#rsvp{
-			label{
+
+		&#rsvp {
+			label {
 				color: #ffffff
 			}
 		}
@@ -111,15 +105,139 @@ form {
 #multimidia {
 	transform: rotate(-10deg);
 	z-index: 10;
+}
 
-	.plyr--video,
-	.plyr--audio {
+
+
+$color_1: #66c2e5;
+$color_2: rgba(0, 0, 0, .1);
+$font-family_1: "Source Sans Pro",
+	arial,
+	sans-serif;
+$background-color_1: transparent;
+$background-color_2: rgba(0, 0, 0, .1);
+
+audio {
+	display: none;
+}
+
+.plyr--audio {
+	font-size: 1rem;
+
+	.plyr__controls {
+		background-color: $background-color_1;
+		border: none;
+		color: $color_1;
+		font-family: $font-family_1;
 		width: 100%;
-		height: auto;
+
+		button {
+			&:hover {
+				background-color: $background-color_2;
+			}
+		}
+
+		button.tab-focus {
+			&:focus {
+				background-color: $background-color_2;
+			}
+		}
+	}
+
+	.plyr__progress--buffer {
+		background-color: $background-color_2;
+		color: $color_2;
+	}
+
+	.plyr__volume--display {
+		background-color: $background-color_2;
 	}
 }
 
+a.plyr__controls__item.plyr__control {
+	&:hover {
+		background-color: $background-color_2;
+	}
+}
+
+.plyr__play-large {
+	background-color: $background-color_2;
+}
+
+.plyr__progress--played {
+	color: $color_2;
+}
+
+.plyr__volume--display {
+	color: $color_2;
+}
+
+.plyr__controls {
+	.plyr__controls__item.plyr__time {
+		font-size: 14px;
+		margin-left: 7px;
+	}
+}
+
+.plyr--video {
+	width: 100%;
+	height: auto;
+}
+
+.btn-shit {
+	border: 2px solid #25567a;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 500;
+	border-radius: 30px;
+	letter-spacing: 1px;
+	padding: 10px 20px;
+	box-shadow: 0 22px 40px rgba(0, 0, 0, 0.95), inset 0 2px 0px rgba(255, 255, 255, 0.5);
+	overflow: hidden;
+	background: #15487f;
+	background: -moz-linear-gradient(left, #15487f 0%, #479fd6 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, #15487f), color-stop(100%, #479fd6));
+	background: -webkit-linear-gradient(left, #15487f 0%, #479fd6 100%);
+	background: -o-linear-gradient(left, #15487f 0%, #479fd6 100%);
+	background: -ms-linear-gradient(left, #15487f 0%, #479fd6 100%);
+	background: linear-gradient(to right, #FF7FFD 0%, #000000 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#15487f', endColorstr='#479fd6', GradientType=1);
+	line-height: 1.33;
+}
+
+.btn-shit .glare {
+	margin-left: -22%;
+	margin-top: -14px;
+	z-index: 2;
+	height: 28px;
+	border-radius: 50%;
+	background: rgba(0, 0, 0, 1);
+	background: -moz-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.49) 51%, rgba(0, 0, 0, 0) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0, 0, 0, 1)), color-stop(51%, rgba(0, 0, 0, 0.49)), color-stop(100%, rgba(0, 0, 0, 0)));
+	background: -webkit-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.49) 51%, rgba(0, 0, 0, 0) 100%);
+	background: -o-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.49) 51%, rgba(0, 0, 0, 0) 100%);
+	background: -ms-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.49) 51%, rgba(0, 0, 0, 0) 100%);
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.49) 51%, rgba(0, 0, 0, 0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#000000', GradientType=0);
+}
+
+.btn-shit:hover,
+.btn-shit:focus {
+	color: #fff;
+	text-decoration: none;
+	background: #2273A8;
+	background: -moz-linear-gradient(left, #2273A8 0%, #009DFF 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, #2273A8), color-stop(100%, #009DFF));
+	background: -webkit-linear-gradient(left, #2273A8 0%, #009DFF 100%);
+	background: -o-linear-gradient(left, #2273A8 0%, #009DFF 100%);
+	background: -ms-linear-gradient(left, #2273A8 0%, #009DFF 100%);
+	background: linear-gradient(to right, #2273A8 0%, #009DFF 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2273A8', endColorstr='#009DFF', GradientType=1);
+}
+
 #textolateral {
+	background-image: url('/assets/dist/img/vhs.gif');
+	background-size: cover;
 
 	//position: relative;
 	p {
@@ -154,22 +272,20 @@ form {
 	img {
 		position: absolute;
 		bottom: 0;
-		left: 0;
 		height: 200px;
 		width: auto;
 
 		&#coracoes {
-			left: -55px;
+			right: 0;
 			height: 250px;
+			transform: scaleX(-1);
 
 			@media (max-width: 1200px) {
 				height: 200px;
-				left: 0px;
 			}
 
 			@media (max-width: 781px) {
 				height: 100px;
-				left: -20px;
 			}
 		}
 
