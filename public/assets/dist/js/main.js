@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                         form.querySelector('#nome').classList.add('d-none');
                         form.querySelector('#goodies-wrapper').classList.remove('d-none');
                         form.querySelector('#last-wrapper').classList.remove('d-none');
+                        form.querySelector('button[type=submit]').classList.remove('d-none');
                     }
                 })
                 submitzada.addEventListener('click', (event) => {
@@ -50,7 +51,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
                         inputqtd.classList.remove('is-invalid')
                         inputgoodie.classList.remove('is-invalid')
                         form.querySelector('#goodies-wrapper').classList.add('d-none');
-                        form.querySelector('button[type=submit]').classList.remove('d-none');
                         document.querySelector("#resposta").textContent = 'sim'
                     }
                 })
