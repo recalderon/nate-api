@@ -30,7 +30,7 @@ async function getPosts(req,res){
         let { db } = await connectToDatabase();
         // fetch the posts
         let goodies = await db
-            .collection('goodies')
+            .collection('rsvps')
             .find({})
             .sort({ published: -1 })
             .toArray();
@@ -53,7 +53,7 @@ async function addPost(req, res) {
         // connect to the database
         let { db } = await connectToDatabase();
         // add the post
-        await db.collection('goodies').insertOne(JSON.parse(req.body));
+        await db.collection('rsvps').insertOne(JSON.parse(req.body));
         // return a message
         return res.json({
             message: 'Post added successfully',
@@ -71,7 +71,7 @@ async function updatePost(req, res) {
         let { db } = await connectToDatabase();
 
         // update the published status of the post
-        await db.collection('goodies').updateOne(
+        await db.collection('rsvps').updateOne(
             {
                 _id: new ObjectId(req.body),
             },
@@ -99,7 +99,7 @@ async function deletePost(req, res) {
         let { db } = await connectToDatabase();
 
         // Deleting the post
-        await db.collection('goodies').deleteOne({
+        await db.collection('rsvps').deleteOne({
             _id: new ObjectId(req.body),
         });
 
