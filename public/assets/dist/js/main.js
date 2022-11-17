@@ -50,10 +50,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
                         inputqtd.classList.remove('is-invalid')
                         inputgoodie.classList.remove('is-invalid')
                         form.querySelector('#goodies-wrapper').classList.add('d-none');
+                        form.querySelector('button[type=submit]').classList.remove('d-none');
+                        document.querySelector("#resposta").textContent = 'sim'
                     }
                 })
             }else if(this.value == 'nao'){
-                form.querySelector('#last-wrapper').classList.remove('d-none');
+                form.querySelector('button[type=submit]').classList.remove('d-none');
+                let allinput = form.querySelectorAll('input[type="text"]')
+                allinput.forEach(element => {
+                    element.disabled = true;
+                });
+                document.querySelector("#resposta").textContent = 'nao'
+
             }
         };
     }
@@ -72,11 +80,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
 
         let result = await response.json();
-        let message = document.querySelector('.message')
+        let message = document.querySelector('#ok')
 
         if (result.success == true) {
             form.classList.add('d-none')
-            message.classList.remove('d-none')
+            if (document.querySelector("#resposta").textContent == 'sim'){                
+                document.querySelector('#ok').classList.remove('d-none');
+            }else{          
+                document.querySelector('#no').classList.remove('d-none');
+            }
         }
     };
 

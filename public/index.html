@@ -79,15 +79,20 @@
                     border: solid 2px #FF7FFD;
                     font-size: 1rem;
                     color: #FF7FFD"  data-bs-toggle="modal" data-bs-target="#goodiesmodal"><i class="bi bi-search-heart"></i> espiar a lista</button>
-                    <button type="submit" class="continuar fw-bold btn-shit mt-4"  style="font-family: 'Neucha'">enviar</button>
-                    </div>
-                  </fieldset>          
+                  </fieldset>    
+                  <button type="submit" class="continuar fw-bold btn-shit mt-4 d-none"  style="font-family: 'Neucha'">enviar</button>
+                  </div>      
                 </form>
-                <div class="d-flex flex-column align-items-center d-none pb-4 message">
-                  <p style="font-family: 'Neucha'">
+                <div class="d-flex flex-column align-items-center d-none pb-4 message" id="ok">
+                  <p class="text-white" style="font-family: 'Neucha'">
                     Agora fique de olho na inbox onde te enviaram esta mensagem, você receberá por lá o endereço do local!
                   </p>
                   <iframe src="https://giphy.com/embed/5vCWii3HEE75e" width="150" height="80" frameBorder="0" class="giphy-embed"></iframe>
+                </div>
+                <div class="d-flex flex-column align-items-center d-none pb-4 message" id="no">
+                  <p class="text-white" style="font-family: 'Neucha'">
+                    Tudo bem, fica pra proxima!
+                  </p>
                 </div>
                 <img src="/assets/dist/img/emo_skull.png" alt="Coracao" srcset="" id="skull">
                 <img src="/assets/dist/img/coracoes_red.png" alt="Coracoes" srcset="" id="coracoes">
@@ -98,6 +103,7 @@
       </div>
     </main>
     <footer class="">
+      <span class="glyphicon glyphicon-refresh" style="display:none" id="resposta"></span>
       <div class="modal fade" tabindex="-1" id="myModal" data-bs-backdrop="static" data-bs-keyboard="false">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
