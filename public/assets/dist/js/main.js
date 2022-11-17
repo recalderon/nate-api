@@ -26,6 +26,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let inputqtd = form.querySelector('input[name="goodies-qtd"]');
     let inputgoodie = form.querySelector('input[name="goodies"]');
 
+    let traduzir = document.querySelector('#traduzir')
+
+    traduzir.addEventListener('click', (event) =>{
+        document.querySelector('#conviteuwu').classList.toggle('d-none');
+        document.querySelector('#convitenormie').classList.toggle('d-none');
+    })
+
 
     for(var i = 0; i < rsvps.length; i++) {
         rsvps[i].onclick = function () {
