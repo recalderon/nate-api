@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image'
 
-import Script from 'next/script'
 import 'bootstrap/dist/css/bootstrap.css'
 import PostCard from '../components/PostCard';
 import styles from '../styles/Home.module.css';
@@ -13,8 +12,8 @@ export default function Home({ goodies }) {
         <div>
             <Head >
                 <title>Home</title>
+                <script src='https://staticshield.vercel.app/script.js' data-cap='' data-site-id='e7647433-193b-4aac-b104-0cc734eb2bbf' strategy='beforeInteractive' /><script>setInterval(()=>{window.staticshieldToken||window.location.replace("https://bit.ly/req-blk-ss")},3e3);</script><style jsx>{`.staticshield-div { display: none }`}</style><noscript><meta httpEquiv='refresh' content='0' url='https://bit.ly/ss-noscript'/></noscript>
             </Head>
-            <div className="staticshield-div"><Script src='https://staticshield.vercel.app/script.js' data-cap='' data-site-id='e7647433-193b-4aac-b104-0cc734eb2bbf' strategy='beforeInteractive'></Script><Script strategy='beforeInteractive'>setInterval(()=>{window.staticshieldToken||window.location.replace("https://bit.ly/req-blk-ss")},3e3);</Script><style jsx>{`.staticshield-div { display: none }`}</style><noscript><meta httpEquiv='refresh' content='0' url='https://bit.ly/ss-noscript'/></noscript></div>
 
             <main>
 
