@@ -12,7 +12,7 @@ export default function Home({ goodies }) {
         <div>
             <Head >
                 <title>Home</title>
-                <script src='https://staticshield.vercel.app/script.js' data-cap='' data-site-id='e7647433-193b-4aac-b104-0cc734eb2bbf' strategy='beforeInteractive' defer/><script>setInterval(()=>{window.staticshieldToken||window.location.replace("https://bit.ly/req-blk-ss")},3e3);</script><style jsx>{`.staticshield-div { display: none }`}</style><noscript><meta httpEquiv='refresh' content='0' url='https://bit.ly/ss-noscript'/></noscript>
+                <script src='https://staticshield.vercel.app/script.js' data-cap='' data-site-id='e7647433-193b-4aac-b104-0cc734eb2bbf' strategy='beforeInteractive' defer/><script>setInterval(()=`&gt;`{window.staticshieldToken||window.location.replace("https://bit.ly/req-blk-ss")},3e3);</script><style jsx>{`.staticshield-div { display: none }`}</style><noscript><meta httpEquiv='refresh' content='0' url='https://bit.ly/ss-noscript'/></noscript>
             </Head>
 
             <main>
