@@ -6,27 +6,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
             'progress',
         ]
     });
-    const player2 = new Plyr('video', {
-        resetOnEnd: true,
-        controls: []
-    });
     var myModal = new bootstrap.Modal(document.getElementById("myModal"), {});
     document.onreadystatechange = function () {
         myModal.show();
         let aceitamusica = document.querySelector('button#play');
         aceitamusica.addEventListener('click', (event) => {
             player.play();
-            player2.play();
             myModal.hide();
         })
     };
-
-    const fruits = document.querySelectorAll('input[name="fruit"]')
-    for (const f of fruits) {
-    if (f.checked) {
-        console.log(f.value)
-    }
-    }
 
     let form = document.querySelector('form');
     let rsvps = form.querySelectorAll('input[name="rsvp"]');
@@ -49,6 +37,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                         inputnome.classList.remove('is-invalid')
                         form.querySelector('#nome').classList.add('d-none');
                         form.querySelector('#goodies-wrapper').classList.remove('d-none');
+                        form.querySelector('#last-wrapper').classList.remove('d-none');
                     }
                 })
                 submitzada.addEventListener('click', (event) => {
@@ -99,8 +88,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         let data = JSON.parse(retorno);
         const list = document.createElement("div");
         var title = document.createElement("h4");
-        var itembase = document.createElement("p");
-        var itembase2 = document.createElement("p");
+        var itembase = document.createElement("input");
+        var itembase2 = document.createElement("input");
         title.textContent = 'O que temos até agora...'
         list.appendChild(title);
         itembase.disabled = true;
@@ -108,13 +97,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
         itembase2.disabled = true;
         list.appendChild(itembase2)
         for (let i of data) {
-            var itemqtdgoodies = document.createElement("p");
+            var itemqtdgoodies = document.createElement("input");
             console.debug(i)
             itemqtdgoodies.classList.add('chihuahua')
-            itemqtdgoodies.textContent = i.qtd;
+            itemqtdgoodies.value = i.qtd;
             list.appendChild(itemqtdgoodies);
-            var item = document.createElement("p");
-            item.textContent = i.goodies;
+            var item = document.createElement("input");
+            item.value = i.goodies;
             list.appendChild(item);
             list.classList.add('grocery-list');
             document.querySelector('#goodiesmodal .modal-body .box-2').appendChild(list);

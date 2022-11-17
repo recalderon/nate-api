@@ -29,7 +29,7 @@
     top: 4px;
     left: 4px;
   }
-  .grocery-list p {
+  .grocery-list input{
     font-family: "Neucha", sans-serif;
     font-weight: bold;
     border-radius: 0;

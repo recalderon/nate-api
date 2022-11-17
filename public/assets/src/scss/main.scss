@@ -40,7 +40,7 @@
 
 * {
 	body {
-		font-family: "Lemon";
+		font-family: "Neucha";
 		background-color: #000000;
 		background-image: url('/assets/dist/img/bats.svg');
 		background-size: cover;
@@ -185,7 +185,6 @@ a.plyr__controls__item.plyr__control {
 }
 
 .btn-shit {
-	border: 2px solid #25567a;
 	color: #fff;
 	text-transform: uppercase;
 	font-weight: 500;
@@ -269,47 +268,46 @@ a.plyr__controls__item.plyr__control {
 		margin-top: 50px;
 	}
 
-	img {
+	.linkmodalgoodies{
+		font-size: 0.8rem;
+		color: #FF7FFD
+	}
+
+	#coracoes, #skull  {
 		position: absolute;
 		bottom: 0;
 		height: 200px;
 		width: auto;
+	}
 
-		&#coracoes {
-			right: 0;
-			height: 250px;
-			transform: scaleX(-1);
+	#coracoes {
+		left: 0;
+		height: 250px;
 
-			@media (max-width: 1200px) {
-				height: 200px;
-			}
-
-			@media (max-width: 781px) {
-				height: 100px;
-			}
+		@media (max-width: 1200px) {
+			height: 200px;
 		}
 
-		&#skull {
-			top: -70px;
-			right: -90px;
-			left: unset;
-			transform: rotate(45deg);
+		@media (max-width: 781px) {
+			height: 100px;
+			left: -20px;
+		}
+	}
 
-			@media (max-width: 1200px) {
-				top: 0;
-			}
+	#skull {
+		top: -70px;
+		right: -90px;
+		left: unset;
+		transform: rotate(45deg);
 
-			@media (max-width: 781px) {
-				top: -29px;
-				right: -35px;
-				height: 100px;
-			}
+		@media (max-width: 1200px) {
+			top: 0;
 		}
 
-		&#heart {
-			top: -70px;
-			left: -60px;
-			transform: rotate(-45deg);
+		@media (max-width: 781px) {
+			top: -29px;
+			right: -35px;
+			height: 150px;
 		}
 	}
 }
