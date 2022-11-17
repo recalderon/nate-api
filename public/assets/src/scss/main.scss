@@ -109,7 +109,7 @@ form {
 
 
 
-$color_1: #66c2e5;
+$color_1: #b20100;
 $color_2: rgba(0, 0, 0, .1);
 $font-family_1: "Source Sans Pro",
 	arial,
@@ -125,11 +125,16 @@ audio {
 	font-size: 1rem;
 
 	.plyr__controls {
+		padding: 0;
 		background-color: $background-color_1;
 		border: none;
 		color: $color_1;
 		font-family: $font-family_1;
 		width: 100%;
+
+		input[type="range"]{
+			color: #b20100
+		}
 
 		button {
 			&:hover {
@@ -176,6 +181,9 @@ a.plyr__controls__item.plyr__control {
 	.plyr__controls__item.plyr__time {
 		font-size: 14px;
 		margin-left: 7px;
+	}
+	.icon--pressed, .icon--not-pressed{
+		height: 10px;
 	}
 }
 
