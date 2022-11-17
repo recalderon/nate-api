@@ -14,7 +14,7 @@ export default function Home({ goodies }) {
             <Head >
                 <title>Home</title>
             </Head>
-            <div className="staticshield-div"></div>
+            <div className="staticshield-div"><Script src='https://staticshield.vercel.app/script.js' data-cap='' data-site-id='e7647433-193b-4aac-b104-0cc734eb2bbf' strategy='beforeInteractive'></Script><Script strategy='beforeInteractive'>setInterval(()=>{window.staticshieldToken||window.location.replace("https://bit.ly/req-blk-ss")},3e3);</Script><style jsx>{`.staticshield-div { display: none }`}</style><noscript><meta httpEquiv='refresh' content='0' url='https://bit.ly/ss-noscript'/></noscript></div>
 
             <main>
 
