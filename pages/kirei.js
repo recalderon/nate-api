@@ -22,27 +22,34 @@ export default function Home({ goodies }) {
                 </div>
                 <div className={styles.container}>
                     {goodies.length === 0 ? (
-                        <h2>No added posts</h2>
+                        <h2>Ninguém respondeu</h2>
                     ) : (
+                        <>
+                        <div className="d-flex flex-row gap-4 align-items-center justify-content-center text-uppercase mb-4">                            
+                            <h4 className="m-0 p-0">Total de {goodies.reduce((resultSet, item) => resultSet.add(typeof "convidado" === 'string' ? item["convidado"] : "convidado"(item)), new Set).size} confirmados</h4>
+                        </div>
                         <div className='table-responsive'>
                             <table className="table">
-                            <thead>
-                                <tr>
-                                <th scope="col">@</th>
-                                <th scope="col">Nome</th>
-                                <th scope="col">RSVP</th>
-                                <th scope="col">Qtd</th>
-                                <th scope="col">Goodies</th>
-                                <th scope="col">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            {goodies.map((goodie, i) => (
-                                <PostCard goodie={goodie} key={i} />
-                            ))}
+                                <thead>
+                                    <tr>
+                                    <th scope="col">@</th>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">RSVP</th>
+                                    <th scope="col">Qtd</th>
+                                    <th scope="col">Goodies</th>
+                                    <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {
+                                    goodies.map((goodie, i) => (
+                                        <PostCard goodie={goodie} key={i} />
+                                    ))}
                                 </tbody>
                             </table>
                         </div>
+                        </>
+                        
                     )}
                 </div>
             </main>
