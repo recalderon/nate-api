@@ -23,8 +23,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let continuar = form.querySelector('button.continuar');
     let submitzada = form.querySelector('button[type="submit"]');
     let inputnome = form.querySelector('input[name="nomecompleto"]');
-    let inputqtd = form.querySelector('input[name="goodies-qtd"]');
+    let inputqtd = form.querySelector('input[name="qtd"]');
     let inputgoodie = form.querySelector('input[name="goodies"]');
+    let moregoodies = form.querySelector('button#more-goodies')
 
     let traduzir = document.querySelector('#traduzir')
 
@@ -49,6 +50,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
                         form.querySelector('#last-wrapper').classList.remove('d-none');
                         form.querySelector('button[type=submit]').classList.remove('d-none');
                         document.querySelector("#resposta").textContent = 'sim'
+                        let i = 0;
+                        moregoodies.addEventListener('click', (event) => {
+                            ++i
+                            let menu = document.querySelector('.goodies');
+                            let clonedMenu = menu.cloneNode(true);
+                            clonedMenu.id = 'extra-goodies'+i;
+                            clonedMenu.classList.add('mt-2')
+                            clonedMenu.querySelector('input[name="qtd"]').name = 'qtd-'+i
+                            clonedMenu.querySelector('input[name="qtd-'+i+'"]').required = false
+                            clonedMenu.querySelector('input[name="qtd-'+i+'"]').value = ''
+                            clonedMenu.querySelector('input[name="goodies"]').name = 'goodies-'+i
+                            clonedMenu.querySelector('input[name="goodies-'+i+'"]').required = false
+                            clonedMenu.querySelector('input[name="goodies-'+i+'"]').value = ''
+                            document.querySelector('#goodies-wrapper').appendChild(clonedMenu);
+                        })
+
                     }
                 })
                 submitzada.addEventListener('click', (event) => {
