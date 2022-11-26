@@ -50,33 +50,24 @@ document.addEventListener('DOMContentLoaded', (event) => {
                         form.querySelector('#last-wrapper').classList.remove('d-none');
                         form.querySelector('button[type=submit]').classList.remove('d-none');
                         document.querySelector("#resposta").textContent = 'sim'
-                        let i = 0;
                         moregoodies.addEventListener('click', (event) => {
-                            ++i
                             let menu = document.querySelector('.goodies');
                             let clonedMenu = menu.cloneNode(true);
-                            clonedMenu.id = 'extra-goodies'+i;
                             clonedMenu.classList.add('mt-2')
-                            clonedMenu.querySelector('input[name="qtd"]').name = 'qtd-'+i
-                            clonedMenu.querySelector('input[name="qtd-'+i+'"]').required = false
-                            clonedMenu.querySelector('input[name="qtd-'+i+'"]').value = ''
-                            clonedMenu.querySelector('input[name="goodies"]').name = 'goodies-'+i
-                            clonedMenu.querySelector('input[name="goodies-'+i+'"]').required = false
-                            clonedMenu.querySelector('input[name="goodies-'+i+'"]').value = ''
+                            clonedMenu.querySelectorAll('input').forEach((clonedinput) => {
+                                clonedinput.id = '';
+                                clonedinput.name = '';
+                                clonedinput.required = false;
+                                clonedinput.value = '';
+                                clonedinput.classList.add('extra-goodies')
+                            })
                             document.querySelector('#goodies-wrapper').appendChild(clonedMenu);
                         })
 
                     }
                 })
                 submitzada.addEventListener('click', (event) => {
-                    if (inputqtd.value == '' || inputgoodie.value == ''){
-                        inputqtd.classList.add('is-invalid')
-                        inputgoodie.classList.add('is-invalid')
-                    }else{
-                        inputqtd.classList.remove('is-invalid')
-                        inputgoodie.classList.remove('is-invalid')
                         form.querySelector('#goodies-wrapper').classList.add('d-none');
-                    }
                 })
             }else if(this.value == 'nao'){
                 form.querySelector('button[type=submit]').classList.remove('d-none');
@@ -96,8 +87,24 @@ document.addEventListener('DOMContentLoaded', (event) => {
         let dados = new FormData(form);
         let param = new URLSearchParams(document.location.search);
         let arroba = param.get('convidado')
+
         dados.append('convidado', arroba);
 
+        const arraygoodies = [...form.querySelectorAll('.goodies input')].map(option => option.value);
+        const res = [];
+
+        for(let i = 0; i < arraygoodies.length; i+=2){
+            res.push({qtd:arraygoodies[i], goodies: arraygoodies[i + 1]});
+        }
+
+        dados.append('goodies', JSON.stringify(res))
+
+        // Display the key/value pairs
+        for (var pair of dados.entries()) {
+            console.log(pair[0]+ ', ' + pair[1]);
+        }
+
+        // //send data
         let response = await fetch('/api/goodies', {
             method: 'POST',
             body: JSON.stringify(Object.fromEntries(dados))
@@ -108,9 +115,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         if (result.success == true) {
             form.classList.add('d-none')
-            if (document.querySelector("#resposta").textContent == 'sim'){                
+            if (document.querySelector("#resposta").textContent == 'sim'){
                 document.querySelector('#ok').classList.remove('d-none');
-            }else{          
+            }else{
                 document.querySelector('#no').classList.remove('d-none');
             }
         }
@@ -121,7 +128,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         const goodies = await response.json();
         return goodies;
     }
-    fetchGoodiesJSON().then(goodie => {    
+    fetchGoodiesJSON().then(goodie => {
         let retorno = JSON.stringify(goodie.message);
         let data = JSON.parse(retorno);
         const list = document.createElement("div");

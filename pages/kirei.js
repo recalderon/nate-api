@@ -3,9 +3,6 @@ import Image from 'next/image'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import PostCard from '../components/PostCard';
-import styles from '../styles/Home.module.css';
-
-
 
 export default function Home({ goodies }) {
     return (
@@ -16,28 +13,27 @@ export default function Home({ goodies }) {
 
             <main>
 
-                <div className="bg-black text-center py-1 d-flex flex-row align-items-center gap-4 justify-content-center">
+                <div className="bg-black text-center py-1 d-flex flex-column flex-md-row align-items-center gap-4 justify-content-center p-4 p-md-0">
                     <Image src="/assets/dist/img/logo.svg" alt="me" width="300" height="150" />
                     <h4 className='text-uppercase text-white'>Lista de convidados confirmados e o que vão trazer</h4>
                 </div>
-                <div className={styles.container}>
+                <div className='container my-4'>
                     {goodies.length === 0 ? (
                         <h2>Ninguém respondeu</h2>
                     ) : (
                         <>
-                        <div className="d-flex flex-row gap-4 align-items-center justify-content-center text-uppercase mb-4">                            
+                        <div className="d-flex flex-column flex-md-row gap-4 align-items-center justify-content-center text-uppercase mb-4">
                             <h4 className="m-0 p-0">Total de {goodies.reduce((resultSet, item) => resultSet.add(typeof "convidado" === 'string' ? item["convidado"] : "convidado"(item)), new Set).size} confirmados</h4>
                         </div>
                         <div className='table-responsive'>
-                            <table className="table">
-                                <thead>
+                            <table className="table table-striped align-middle">
+                                <thead className='table-dark'>
                                     <tr>
-                                    <th scope="col">@</th>
-                                    <th scope="col">Nome</th>
-                                    <th scope="col">RSVP</th>
-                                    <th scope="col">Qtd</th>
-                                    <th scope="col">Goodies</th>
-                                    <th scope="col">Action</th>
+                                        <th className='text-center'>@</th>
+                                        <th className='text-center'>Nome</th>
+                                        <th className='text-center'>RSVP</th>
+                                        <th className='text-center'>O que vai trazer?</th>
+                                        <th className='text-center'>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -49,7 +45,7 @@ export default function Home({ goodies }) {
                             </table>
                         </div>
                         </>
-                        
+
                     )}
                 </div>
             </main>
